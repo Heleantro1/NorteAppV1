@@ -4,36 +4,114 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cadastro - Norte Financeiro IA</title>
+
   <link rel="stylesheet" href="css/login.css" />
 </head>
-<body class="login-body">
-  <div class="login-container">
-    <div class="login-card">
-      <h1>Norte Financeiro IA</h1>
-      <p class="subtitle">Crie sua conta para acessar o painel</p>
 
-      <form id="registerForm">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" placeholder="Seu nome" required />
+<body class="login-page">
 
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="seuemail@exemplo.com" required />
+  <div class="login-overlay"></div>
 
-        <label for="senha">Senha</label>
-        <input type="password" id="senha" placeholder="Crie uma senha" required />
+  <div class="login-shell">
 
-        <button type="submit">Cadastrar</button>
-      </form>
+    <!-- LADO ESQUERDO (branding) -->
+    <div class="brand-panel">
+      <div class="brand-content">
 
-      <p id="registerMensagem" class="mensagem"></p>
+        <div class="badge">NORTE IA</div>
 
-      <p class="extra-link">
-        Já tem conta?
-        <a href="index.html">Entrar</a>
-      </p>
+        <h1>Norte Financeiro IA</h1>
+
+        <p class="brand-description">
+          Crie sua conta e comece a organizar sua vida financeira com inteligência,
+          controle e clareza.
+        </p>
+
+        <div class="brand-highlights">
+
+          <div class="highlight-card">
+            <h3>📊 Controle Total</h3>
+            <p>Gerencie receitas, despesas e metas em um só lugar.</p>
+          </div>
+
+          <div class="highlight-card">
+            <h3>🔐 Segurança</h3>
+            <p>Seus dados protegidos com estrutura confiável.</p>
+          </div>
+
+          <div class="highlight-card">
+            <h3>⚡ Rápido e simples</h3>
+            <p>Comece em poucos segundos, sem complicação.</p>
+          </div>
+
+        </div>
+      </div>
     </div>
+
+    <!-- LADO DIREITO (formulário) -->
+    <div class="form-panel">
+
+      <div class="form-card">
+
+        <div class="form-header">
+          <div class="form-kicker">Cadastro</div>
+
+          <h2>Crie sua conta</h2>
+
+          <p class="form-subtitle">
+            Preencha seus dados para começar a usar o sistema.
+          </p>
+        </div>
+
+        <!-- FORM -->
+        <form id="registerForm" class="login-form">
+
+          <div class="input-group">
+            <label for="nome">Nome</label>
+            <div class="input-wrapper">
+              <span class="input-icon">👤</span>
+              <input type="text" id="nome" placeholder="Seu nome completo" required />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="email">Email</label>
+            <div class="input-wrapper">
+              <span class="input-icon">✉️</span>
+              <input type="email" id="email" placeholder="seuemail@exemplo.com" required />
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="senha">Senha</label>
+            <div class="input-wrapper">
+              <span class="input-icon">🔒</span>
+              <input type="password" id="senha" placeholder="Crie uma senha" required />
+            </div>
+          </div>
+
+          <button type="submit" class="login-button">
+            Criar conta
+          </button>
+
+        </form>
+
+        <!-- MENSAGEM -->
+        <p id="registerMensagem" class="mensagem"></p>
+
+        <!-- LINK LOGIN -->
+        <p class="extra-link">
+          Já tem conta?
+          <a href="index.html">Entrar</a>
+        </p>
+
+      </div>
+
+    </div>
+
   </div>
 
   <script src="js/register.js"></script>
+
 </body>
 </html>
