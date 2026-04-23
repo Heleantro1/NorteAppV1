@@ -53,4 +53,4 @@ O **Norte Financeiro IA** é uma aplicação web fullstack que permite ao usuár
 ```bash
 pip install requirements.txt
 cd backend
-pyon -m uvicorn app.main:app --reload
+python -m uvicorn app.main:app --reload
