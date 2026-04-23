@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metas - Norte Financeiro IA</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>Norte Financeiro IA</h1>
+       
+      </div>
+
+      <nav class="menu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="transacoes.html">Transações</a>
+        <a href="metas.html" class="active">Metas</a>
+        <a href="orcamentos.html">Orçamentos</a>
+        <a href="relatorios.html">Relatórios</a>
+        <a href="insights.html">Insights IA</a>
+      </nav>
+
+      <button class="logout-btn" onclick="logout()">Sair</button>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <h2>Metas Financeiras</h2>
+          <p>Defina objetivos e acompanhe sua evolução</p>
+        </div>
+      </header>
+
+      <section class="panel form-panel">
+        <div class="panel-header panel-header-inline">
+          <h3 id="tituloFormularioMeta">Nova Meta</h3>
+          <button type="button" class="secondary-btn" onclick="cancelarEdicaoMeta()" id="btnCancelarEdicaoMeta" style="display: none;">
+            Cancelar edição
+          </button>
+        </div>
+
+        <form id="metaForm" class="form-grid">
+          <input type="hidden" id="metaId">
+
+          <div class="form-group">
+            <label for="titulo">Título da Meta</label>
+            <input type="text" id="titulo" placeholder="Ex: Reserva de emergência" required>
+          </div>
+
+          <div class="form-group">
+            <label for="valorMeta">Valor da Meta</label>
+            <input type="number" id="valorMeta" step="0.01" placeholder="0.00" required>
+          </div>
+
+          <div class="form-group">
+            <label for="valorAtual">Valor Atual</label>
+            <input type="number" id="valorAtual" step="0.01" placeholder="0.00" required>
+          </div>
+
+          <div class="form-group">
+            <label for="prazo">Prazo</label>
+            <input type="date" id="prazo" required>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="primary-btn" id="btnSalvarMeta">Salvar Meta</button>
+          </div>
+        </form>
+
+        <section class="feedback-box" id="metaMensagem"></section>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header panel-header-inline">
+          <h3>Minhas Metas</h3>
+          <button class="secondary-btn" onclick="carregarMetas()">Atualizar</button>
+        </div>
+
+        <div id="listaMetas" class="metas-grid">
+          <p>Carregando metas...</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/metas.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

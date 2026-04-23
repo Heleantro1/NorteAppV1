@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Norte Financeiro IA - Login</title>
+  <link rel="stylesheet" href="./css/login.css" />
+</head>
+<body>
+  <div class="login-page">
+    <div class="login-overlay"></div>
+
+    <main class="login-shell">
+      <section class="brand-panel">
+        <div class="brand-content">
+          <span class="badge">PLANEJAMENTO FINANCEIRO INTELIGENTE</span>
+
+          <h1>Norte Financeiro IA</h1>
+
+          <p class="brand-description">
+            Controle sua vida financeira com mais clareza, organização e inteligência.
+            Visualize transações, metas, relatórios e insights em um só lugar.
+          </p>
+
+          <div class="brand-highlights">
+            <div class="highlight-card">
+              <h3>Visão estratégica</h3>
+              <p>Acompanhe receitas, despesas, metas e desempenho mensal.</p>
+            </div>
+
+            <div class="highlight-card">
+              <h3>Insights com IA</h3>
+              <p>Receba alertas, recomendações e análises do seu comportamento financeiro.</p>
+            </div>
+
+            <div class="highlight-card">
+              <h3>Experiência profissional</h3>
+              <p>Interface moderna, fluida e pensada para uso real no dia a dia.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-panel">
+        <div class="form-card">
+          <div class="form-header">
+            <p class="form-kicker">Acesso seguro</p>
+            <h2>Entrar na plataforma</h2>
+            <p class="form-subtitle">
+              Informe seu e-mail e senha para acessar seu painel.
+            </p>
+          </div>
+
+          <form id="loginForm" class="login-form">
+            <div class="input-group">
+              <label for="email">E-mail</label>
+              <div class="input-wrapper">
+                <span class="input-icon">✉</span>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="seuemail@exemplo.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="senha">Senha</label>
+              <div class="input-wrapper">
+                <span class="input-icon">🔒</span>
+                <input
+                  type="password"
+                  id="senha"
+                  placeholder="Digite sua senha"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-options">
+              <label class="remember-me">
+                <input type="checkbox" />
+                <span>Lembrar acesso</span>
+              </label>
+
+              <a href="#" class="forgot-link">Esqueci minha senha</a>
+            </div>
+
+            <button type="submit" class="login-button">Entrar</button>
+
+            <p id="loginMensagem" class="mensagem"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./js/login.js"></script>
+</body>
+</html>

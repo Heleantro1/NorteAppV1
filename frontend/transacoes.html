@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transações - Norte Financeiro IA</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>Norte Financeiro IA</h1>
+        
+      </div>
+
+      <nav class="menu">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="transacoes.html" class="active">Transações</a>
+        <a href="metas.html">Metas</a>
+        <a href="orcamentos.html">Orçamentos</a>
+        <a href="relatorios.html">Relatórios</a>
+        <a href="insights.html">Insights IA</a>
+      </nav>
+
+      <button class="logout-btn" onclick="logout()">Sair</button>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <h2>Transações</h2>
+          <p>Cadastre e acompanhe suas receitas e despesas</p>
+        </div>
+      </header>
+
+      <section class="panel form-panel">
+        <div class="panel-header panel-header-inline">
+          <h3 id="tituloFormulario">Nova Transação</h3>
+          <button type="button" class="secondary-btn" onclick="cancelarEdicao()" id="btnCancelarEdicao" style="display: none;">
+            Cancelar edição
+          </button>
+        </div>
+
+        <form id="transacaoForm" class="form-grid">
+          <input type="hidden" id="transacaoId">
+
+          <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <input type="text" id="descricao" placeholder="Ex: Salário, Aluguel, Mercado" required>
+          </div>
+
+          <div class="form-group">
+            <label for="valor">Valor</label>
+            <input type="number" id="valor" step="0.01" placeholder="0.00" required>
+          </div>
+
+          <div class="form-group">
+            <label for="tipo">Tipo</label>
+            <select id="tipo" required>
+              <option value="">Selecione</option>
+              <option value="receita">Receita</option>
+              <option value="despesa">Despesa</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="categoria">Categoria</label>
+            <input type="text" id="categoria" placeholder="Ex: Moradia, Alimentação, Trabalho" required>
+          </div>
+
+          <div class="form-group">
+            <label for="data">Data</label>
+            <input type="date" id="data" required>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="primary-btn" id="btnSalvarTransacao">Salvar Transação</button>
+          </div>
+        </form>
+
+        <section class="feedback-box" id="transacaoMensagem"></section>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header panel-header-inline">
+          <h3>Minhas Transações</h3>
+          <button class="secondary-btn" onclick="carregarTransacoes()">Atualizar</button>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Tipo</th>
+                <th>Valor</th>
+                <th>Data</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tabelaTransacoes">
+              <tr>
+                <td colspan="6">Carregando transações...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/transacoes.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>

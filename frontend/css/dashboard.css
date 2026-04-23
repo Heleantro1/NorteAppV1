@@ -1,0 +1,337 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background: #0f172a;
+  color: white;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.brand h1 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.brand p {
+  font-size: 14px;
+  color: #cbd5e1;
+  margin-bottom: 30px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #e2e8f0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.menu a:hover,
+.menu a.active {
+  background: #1e293b;
+  color: white;
+}
+
+.logout-btn {
+  margin-top: 30px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #ef4444;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.main-content {
+  flex: 1;
+  padding: 28px;
+}
+
+.topbar {
+  margin-bottom: 24px;
+}
+
+.topbar-label {
+  font-size: 13px;
+  color: #2563eb;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.topbar h2 {
+  font-size: 30px;
+  margin-bottom: 6px;
+}
+
+.topbar-description {
+  color: #475569;
+}
+
+.hero-summary {
+  margin-bottom: 24px;
+}
+
+.hero-card {
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
+  color: white;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+}
+
+.hero-label {
+  display: block;
+  color: #dbeafe;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.hero-card h3 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.hero-helper {
+  color: #dbeafe;
+  font-size: 14px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.card span {
+  display: block;
+  color: #64748b;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.card-receitas {
+  border-top: 4px solid #16a34a;
+}
+
+.card-despesas {
+  border-top: 4px solid #dc2626;
+}
+
+.card-status {
+  border-top: 4px solid #2563eb;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.panel {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 24px;
+}
+
+.panel-header {
+  margin-bottom: 16px;
+}
+
+.panel-header h3 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.panel-header p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.chart-bar-container {
+  height: 300px;
+}
+
+.chart-pie-container {
+  height: 300px;
+  padding: 10px 0;
+}
+
+.chart-line-container {
+  height: 320px;
+}
+
+#graficoFinanceiro {
+  width: 100% !important;
+  max-width: 900px;
+  max-height: 260px !important;
+}
+
+#graficoCategorias {
+  width: 100% !important;
+  max-width: 260px;
+  max-height: 260px !important;
+}
+
+#graficoHistoricoMensal {
+  width: 100% !important;
+  max-width: 1100px;
+  max-height: 280px !important;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.summary-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.summary-item span {
+  display: block;
+  color: #64748b;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.summary-item strong {
+  font-size: 20px;
+  color: #0f172a;
+}
+
+.feedback-box {
+  margin-top: 24px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  display: none;
+}
+
+.feedback-box.error {
+  display: block;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.feedback-box.success {
+  display: block;
+  background: #dcfce7;
+  color: #166534;
+}
+
+@media (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .main-content {
+    padding: 18px;
+  }
+
+  .topbar h2 {
+    font-size: 26px;
+  }
+
+  .hero-card h3 {
+    font-size: 30px;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-bar-container,
+  .chart-pie-container,
+  .chart-line-container {
+    height: 240px;
+  }
+
+  #graficoCategorias {
+    max-width: 220px;
+    max-height: 220px !important;
+  }
+
+  #graficoHistoricoMensal {
+    max-height: 220px !important;
+  }
+}
+

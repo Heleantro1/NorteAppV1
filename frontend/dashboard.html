@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Norte Financeiro IA</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>Norte Financeiro IA</h1>
+      </div>
+
+      <nav class="menu">
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="transacoes.html">Transações</a>
+        <a href="metas.html">Metas</a>
+        <a href="orcamentos.html">Orçamentos</a>
+        <a href="relatorios.html">Relatórios</a>
+        <a href="insights.html">Insights IA</a>
+      </nav>
+
+      <button class="logout-btn" onclick="logout()">Sair</button>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="topbar-label">Painel Financeiro</p>
+          <h2>DASHBOARD</h2>
+        </div>
+      </header>
+
+      <section class="hero-summary">
+        <div class="hero-card">
+          <div>
+            <span class="hero-label">Saldo Atual</span>
+            <h3 id="saldoAtual">R$ 0,00</h3>
+            <p class="hero-helper">Resumo consolidado do período atual</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cards-grid">
+        <div class="card card-receitas">
+          <span>Receitas do Mês</span>
+          <h3 id="totalReceitas">R$ 0,00</h3>
+          <p>Entradas registradas no mês atual</p>
+        </div>
+
+        <div class="card card-despesas">
+          <span>Despesas do Mês</span>
+          <h3 id="totalDespesas">R$ 0,00</h3>
+          <p>Saídas registradas no mês atual</p>
+        </div>
+
+        <div class="card card-status">
+          <span>Status Financeiro</span>
+          <h3 id="statusFinanceiro">Carregando...</h3>
+          <p>Saúde financeira baseada no saldo</p>
+        </div>
+      </section>
+
+      <section class="dashboard-grid">
+        <section class="panel panel-large">
+          <div class="panel-header">
+            <h3>Visão Financeira</h3>
+            <p>Comparativo entre receitas e despesas</p>
+          </div>
+          <div class="chart-container chart-bar-container">
+            <canvas id="graficoFinanceiro"></canvas>
+          </div>
+        </section>
+
+        <section class="panel panel-small">
+          <div class="panel-header">
+            <h3>Despesas por Categoria</h3>
+            <p>Distribuição dos principais gastos</p>
+          </div>
+          <div class="chart-container chart-pie-container">
+            <canvas id="graficoCategorias"></canvas>
+          </div>
+        </section>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h3>Evolução Mensal</h3>
+          <p>Receitas, despesas e saldo ao longo do ano</p>
+        </div>
+        <div class="chart-container chart-line-container">
+          <canvas id="graficoHistoricoMensal"></canvas>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h3>Resumo do Mês</h3>
+          <p>Indicadores principais do período atual</p>
+        </div>
+
+        <div class="summary-grid">
+          <div class="summary-item">
+            <span>Mês</span>
+            <strong id="mesAtual">--</strong>
+          </div>
+
+          <div class="summary-item">
+            <span>Receitas</span>
+            <strong id="resumoReceitas">R$ 0,00</strong>
+          </div>
+
+          <div class="summary-item">
+            <span>Despesas</span>
+            <strong id="resumoDespesas">R$ 0,00</strong>
+          </div>
+
+          <div class="summary-item">
+            <span>Saldo</span>
+            <strong id="resumoSaldo">R$ 0,00</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="feedback-box" id="dashboardMensagem"></section>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
